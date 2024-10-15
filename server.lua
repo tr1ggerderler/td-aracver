@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNetEvent('qb-vehiclejob:server:BuyVehicle')
-AddEventHandler('qb-vehiclejob:server:BuyVehicle', function (vehicle, hash, plate, mods)
+RegisterNetEvent('td-aracver:server:sendVehicle')
+AddEventHandler('td-aracver:server:sendVehicle', function (vehicle, hash, plate, mods)
     local src = source
     local xPlayer = QBCore.Functions.GetPlayer(src)
     
