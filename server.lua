@@ -29,7 +29,7 @@ QBCore.Commands.Add("aracver", "Bir oyuncuya araç ver (örnek: /aracver 1234560
         local targetPlayer = QBCore.Functions.GetPlayer(targetPlayerId)
         if targetPlayer then
             local vehicleInfo = {vehicle = vehicleModel}
-            TriggerClientEvent('qb-vehiclejob:client:TakeOutVehicle', targetPlayer.PlayerData.source, vehicleInfo)
+            TriggerClientEvent('td-aracver:client:TakeOutVehicle', targetPlayer.PlayerData.source, vehicleInfo)
             QBCore.Functions.Notify(source, "Araç başarıyla verildi.", 'success')
         else
             QBCore.Functions.Notify(source, "Belirtilen oyuncu bulunamadı.", 'error')
@@ -37,8 +37,8 @@ QBCore.Commands.Add("aracver", "Bir oyuncuya araç ver (örnek: /aracver 1234560
     end
 )
 
-RegisterNetEvent('qb-vehiclejob:server:BuyVehicle')
-AddEventHandler('qb-vehiclejob:server:BuyVehicle', function (vehicle, hash, plate, mods)
+RegisterNetEvent('td-aracver:server:BuyVehicle')
+AddEventHandler('td-aracver:server:BuyVehicle', function (vehicle, hash, plate, mods)
     local src = source
     local xPlayer = QBCore.Functions.GetPlayer(src)
     
