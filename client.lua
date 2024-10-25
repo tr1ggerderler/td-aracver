@@ -20,7 +20,7 @@ local function GenerateRandomNumbers(length)
     return randomStr
 end
 
-RegisterNetEvent('qb-vehiclejob:client:TakeOutVehicle', function(vehicleInfo)
+RegisterNetEvent('td-aracver:client:TakeOutVehicle', function(vehicleInfo)
     local playerId = source
     local playerPed = GetPlayerPed(GetPlayerFromServerId(playerId))
     local currentVehicle = GetVehiclePedIsIn(playerPed, false)
@@ -45,7 +45,7 @@ RegisterNetEvent('qb-vehiclejob:client:TakeOutVehicle', function(vehicleInfo)
             exports['qb-fuel']:SetFuel(veh, 100.0)
             TaskWarpPedIntoVehicle(playerPed, veh, -1)
             TriggerEvent("vehiclekeys:client:SetOwner", QBCore.Functions.GetPlate(veh))
-            TriggerServerEvent("qb-vehiclejob:server:BuyVehicle", vehicleInfo.vehicle, GetHashKey(vehicleInfo.vehicle), QBCore.Functions.GetPlate(veh), QBCore.Functions.GetVehicleProperties(veh))
+            TriggerServerEvent("td-aracver:server:BuyVehicle", vehicleInfo.vehicle, GetHashKey(vehicleInfo.vehicle), QBCore.Functions.GetPlate(veh), QBCore.Functions.GetVehicleProperties(veh))
             SetVehicleDirtLevel(veh, 0.0)
             SetVehicleColours(veh, 111, 111)
         end)
